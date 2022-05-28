@@ -1,4 +1,4 @@
-def compress(s)
+def compress(s) # time complexty O(n) input size
     i = 0
     j = 0
     compressed = []
@@ -16,7 +16,7 @@ def compress(s)
                 i = j 
         end
     end
-    return compressed.join('')
+    return compressed.join('') # space complexty O(n) we have to create the output
 end
 
 p compress('nnneeeeeeeeeeeezz'); # -> '3n12e2z'
