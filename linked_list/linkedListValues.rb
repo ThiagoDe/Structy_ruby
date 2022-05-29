@@ -1,10 +1,5 @@
- class Node 
-    attr_accessor :val, :next
-   def initialize(val)
-    @val = val;
-    @next = nil;
-   end
-end
+require './nodeClass.rb'
+
 a = Node.new("a");
 b = Node.new("b");
 c = Node.new("c");
@@ -17,7 +12,7 @@ c.next = d;
 def linkedListValues(head)
     # current = head
     values = []
-    # while current
+    # while current time comp O(n) n is the number of el
     #     values.push(current.val)
     #     current = current.next
     # end
@@ -26,7 +21,7 @@ def linkedListValues(head)
     return values
 end
 
-def _linkedListValues(head, values)
+def _linkedListValues(head, values) # space complexity O(n)
     return if head.nil? 
     values.push(head.val)
     _linkedListValues(head.next, values)
