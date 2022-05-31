@@ -15,7 +15,7 @@ e.next = f;
 
 # // 5 -> 5 -> 7 -> 7 -> 7 -> 6
 
-def longestStreak(head)
+def longestStreak(head) #t O(n) s O(1)
     max = 0
     count = 0
     value = nil
@@ -34,7 +34,6 @@ def longestStreak(head)
         p max
     end
     
-    return nil if max == 0
     return max
 end
 
