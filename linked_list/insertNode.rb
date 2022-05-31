@@ -14,25 +14,28 @@ c.next = d;
 def insertNode(head, value, i)
     node = Node.new(value)
     j = 0
-    node.next = head if j == i
+   if j == i
+     node.next = head 
+     return node
+   end
     current = head
     nextNode = current.next 
 
-    while current
+    while current # T O(n) S O(1)
         if j == i - 1
             current.next = node 
             node.next = nextNode 
             break
         else
             current = current.next 
-            nextNode = current.next if current.next
+            nextNode = current.next 
         end
         j += 1
     end 
     return head
 end
 
-head = insertNode(a, 'x', 0);
+p head = insertNode(a, 'x', 4);
 
     current = head 
 
