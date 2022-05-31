@@ -28,7 +28,7 @@ def mergeLists(a, b)
     current1 = a
     current2 = b
 
-    while current1 && current2
+    while current1 && current2 # t O(min(n, m)) s O(1)
         if current1.val <= current2.val
             tail.next = current1
             current1 = current1.next
