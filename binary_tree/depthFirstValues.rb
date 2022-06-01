@@ -19,7 +19,7 @@ c.right = f;
 # //  / \     \
 # // d   e     f
 
-def depthFirstValues(root)
+def depthFirstValues(root) # time O(n) s O(n)
     return [] if !root 
     return [root.val] if (!root.left && !root.right) 
     return [root.val, *depthFirstValues(root.left), *depthFirstValues(root.right)]
