@@ -7,14 +7,12 @@ graph = {
   k: []
 };
 
-def hasPath(graph, src, dst)
+def hasPath(graph, src, dst) # ts O(n)
    queue = [ src ]
 
    while queue.length > 0
         current = queue.shift 
-        p current
-        p graph[:current]
-        graph[current].each do |neighbor|
+        graph[current.to_sym].each do |neighbor|
             return true if neighbor == dst 
             queue.push(neighbor)
         end
