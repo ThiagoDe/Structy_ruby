@@ -1,5 +1,5 @@
 require 'set'
-def connectedComponentsCount(graph)
+def connectedComponentsCount(graph) # t O(e) e => edges s O(n)
     set = Set.new 
     count = 0
     graph.each do |k, v|
