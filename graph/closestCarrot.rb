@@ -39,5 +39,5 @@ def closestCarrot(grid, rStart, cStart )
   return - 1
 end
 
-p closestCarrot(grid, 3, 4);# // -> 9
-# p closestCarrot(grid, 1, 2);# // -> 4
+# p closestCarrot(grid, 3, 4);# // -> 9
+p closestCarrot(grid, 4, 2);# // -> 4
