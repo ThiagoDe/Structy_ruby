@@ -2,8 +2,7 @@ def compress(s) # time complexty O(n) input size
     i = 0
     j = 0
     compressed = []
-    while (j <= s.length)
-        
+    while (j <= s.length)     
         if (s[i] === s[j])
             j += 1
         else
