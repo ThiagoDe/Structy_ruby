@@ -18,7 +18,7 @@ def bestBridge(grid)
             break
         end
     end
-    
+
     visited = Set.new(mainIsland)
     queue = []
 
@@ -31,18 +31,23 @@ def bestBridge(grid)
 
     while queue.length > 0
         r, c, distance = queue.shift
+        # p "#{r}, #{c}"
         pos = r.to_s + ',' + c.to_s 
         return distance - 1 if grid[r][c] == 'L' && !mainIsland.include?(pos)
 
         deltas = [[1, 0], [0, 1], [-1, 0], [0, -1]]
         deltas.each do |delta|
+            
             deltaR, deltaC = delta
+            
             newR = r + deltaR
             newC = c + deltaC
             newPos = newR.to_s + ',' + newC.to_s
             if isInbounds?(grid, newR, newC) && !visited.include?(newPos)
                 visited.add(newPos)
+                # p "#{newR}, #{newC}"
                 queue.push([newR, newC, distance + 1])
+              
             end
         end
     end
@@ -51,11 +56,11 @@ end
 def isInbounds?(grid, r, c)
     rInbounds = r >= 0 && r < grid.length
     cInbounds = c >= 0 && c < grid[0].length 
-    return !rInbounds || !cInbounds
+    return rInbounds && cInbounds
 end
 
 def traverse(grid, r, c, visited)
-    return visited if isInbounds?(grid, r, c) || grid[r][c] == 'W'
+    return visited if !isInbounds?(grid, r, c) || grid[r][c] == 'W'
     pos = r.to_s + ',' + c.to_s 
     return visited if visited.include?(pos) 
     visited.add(pos)
