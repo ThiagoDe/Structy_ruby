@@ -1,12 +1,13 @@
 require 'byebug'
 def sumPossible(amount, numbers, memo = {})
-    
-    return memo[amount] if memo[amount]
+    if memo.has_key?(amount)
+        return memo[amount] 
+    end
     return false  if amount < 0 
     return true if amount == 0
 
     numbers.each do |num|
-        debugger
+        # debugger
         if sumPossible(amount - num, numbers, memo) == true 
             memo[amount] = true 
             # debugger
@@ -14,6 +15,7 @@ def sumPossible(amount, numbers, memo = {})
         end
     end
     memo[amount] = false
+    # p memo
     return false 
 end
 
