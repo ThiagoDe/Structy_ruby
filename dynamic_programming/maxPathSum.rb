@@ -7,7 +7,7 @@ grid = [
     def maxPathSum(grid, r=0, c=0, memo = {})
         pos = r.to_s + ',' + c.to_s
         return memo[pos] if memo.has_key?(pos)
-        return 0 if r == grid.length || c == grid[0].length
+        return -Float::INFINITY if r == grid.length || c == grid[0].length
         return grid[r][c] if r == grid.length - 1 && c == grid[0].length - 1
 
         down = maxPathSum(grid, r + 1, c, memo)
