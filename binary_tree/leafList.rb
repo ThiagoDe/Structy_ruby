@@ -25,7 +25,7 @@ f.right = h;
 # //    /       \
 # //   g         h
 
-def leafList(root)
+def leafList(root) # O(n)
     return [] if root.nil?
     return [root.val] if root.left.nil? && root.right.nil?
     return [*leafList(root.left), *leafList(root.right)]

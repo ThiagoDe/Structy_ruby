@@ -13,7 +13,7 @@ def arrayStepper(nums, i = 0, memo = {})
     return memo[i] 
 end
 
-# p arrayStepper([2, 4, 2, 0, 0, 1]);# // -> true
+p arrayStepper([2, 4, 2, 0, 0, 1]);# // -> true
 p arrayStepper([ 
   31, 30, 29, 28, 27,
   26, 25, 24, 23, 22,
