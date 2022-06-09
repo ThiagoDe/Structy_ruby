@@ -12,6 +12,8 @@ def summingSquares(n, memo = {})
   end
   memo[n] = min 
   return memo[n]
+
+  
 end
 
 p summingSquares(12); #// -> 3
