@@ -12,6 +12,7 @@ def quickestConcat(s, words, memo = {})
     return - 1 if min == Float::INFINITY
     memo[s] = min 
     return memo[s]
+    
 end
 
 p quickestConcat('caution', ['ca', 'ion', 'caut', 'ut'])#; // -> 2
