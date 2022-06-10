@@ -17,7 +17,6 @@ def befittingBrackets(str)
 
     return stack.empty?
 end
-
 # p befittingBrackets('[]{}()[]');# // -> true
 # p befittingBrackets(']{}'); #// -> false
 # p befittingBrackets('');# // -> true
