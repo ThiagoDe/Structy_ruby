@@ -12,7 +12,6 @@ def maxPalinSubsequence(str, i = 0, j = str.length - 1, memo = {})
             maxPalinSubsequence(str, i, j - 1, memo)].max
             return memo[pos]
         end
-
 end
 
 p maxPalinSubsequence("enamelpinportlandtildecoldpressedironyflannelsemioticsedisonbulbfashionaxe");# // -> 31
