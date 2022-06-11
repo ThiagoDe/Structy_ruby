@@ -3,13 +3,14 @@ def decompressBraces(s)
     stack = [] # 'z', 3, a, 2, x, y
 
     s.each_char do |char|
-        if nums.includes?(char)
+        if nums.include?(char)
             stack.push(char.to_i)
         else 
             if char == '}'
                 segment = ''
-                while !char.is_a? Numeric 
+                while !stack[-1].is_a? Numeric   
                     popped = stack.pop
+                    segment
                     segment = popped + segment
                 end
                 num = stack.pop
@@ -19,6 +20,7 @@ def decompressBraces(s)
             end
         end
     end
+    return stack.join  
 end
 
 def repeat(str, n)
