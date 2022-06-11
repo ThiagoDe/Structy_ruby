@@ -1,12 +1,19 @@
 def nestingScore(str)
-    stack = []
-    count_close = 0 
+    stack = [0]
+    
     str.each_char do |char|
         if char == '['
-            stack.push(char)
-        elsif char == ']' 
+            stack.push(0) 
+        else
+            popped = stack.pop 
+            if popped == 0
+                stack[- 1] += 1
+            else
+                stack[- 1] += (popped * 2)
+            end
         end
     end
+    return stack[0]
 end
 
 p nestingScore("[][][]")# // -> 3
