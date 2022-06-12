@@ -25,21 +25,18 @@ e.right = h;
 # //    / \
 # //    g  h
 def lowestCommonAncestor(root, val1, val2)
-    path1 = []
-    path2 = []
-    p dfs(root, val1)
-    p dfs(root, val2)
+    path1 = dfs(root, val1)
+    path2 = dfs(root, val2)
+    
     
 end
 
 def dfs(root, target)
     return [root.val] if root.val == target
+    return nil if root.val.nil?
     left = dfs(root.left, target) if root.left 
     right = dfs(root.right, target) if root.right 
-    result = [root.val]
-    result.concat(left) if left
-    result.concat(right) if right 
-    return result
+    
 end
 
 p lowestCommonAncestor(a, 'd', 'h'); #// b
