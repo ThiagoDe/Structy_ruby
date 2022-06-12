@@ -1,4 +1,5 @@
 require '../binary_tree/nodeClass'
+require 'set'
 
 a = Node.new('a');
 b = Node.new('b');
@@ -28,19 +29,31 @@ def lowestCommonAncestor(root, val1, val2)
     path1 = dfs(root, val1)
     path2 = dfs(root, val2)
     
-    
+    set = Set.new(path1)
+    path2.each do |el|
+        return el if set.include?(el)
+    end
 end
 
 def dfs(root, target)
+    return nil if root.nil?
     return [root.val] if root.val == target
-    return nil if root.val.nil?
-    left = dfs(root.left, target) if root.left 
-    right = dfs(root.right, target) if root.right 
-    
+    left = dfs(root.left, target)
+    if left 
+        left.push(root.val)
+        return left 
+    end
+    right = dfs(root.right, target) 
+    if right
+        right.push(root.val)
+        return right 
+    end
+    return nil
 end
 
+
 p lowestCommonAncestor(a, 'd', 'h'); #// b
-# p lowestCommonAncestor(a, 'd', 'g'); #// b
-# p lowestCommonAncestor(a, 'g', 'c'); #// a
-# p lowestCommonAncestor(a, 'b', 'g'); #// b
-# p lowestCommonAncestor(a, 'f', 'c'); #/ c
+p lowestCommonAncestor(a, 'd', 'g'); #// b
+p lowestCommonAncestor(a, 'g', 'c'); #// a
+p lowestCommonAncestor(a, 'b', 'g'); #// b
+p lowestCommonAncestor(a, 'f', 'c'); #/ c
