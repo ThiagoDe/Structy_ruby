@@ -9,7 +9,6 @@ def tolerantTeams(rivalries)
     return true 
 end
 
-
 def isBipartite?(graph, node, coloring, currentColor)
     if coloring.has_key?(node)
         return coloring[node] == currentColor
